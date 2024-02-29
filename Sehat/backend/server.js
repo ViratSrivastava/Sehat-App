@@ -12,8 +12,7 @@ passport.use(new GoogleStrategy({
   clientSecret: 'YOUR_GOOGLE_CLIENT_SECRET',
   callbackURL: 'http://localhost:3000/auth/google/callback'
 }, (accessToken, refreshToken, profile, done) => {
-  // Save user data to database or retrieve user data from database
-  // In this example, assume the user is already authenticated and authorized
+  //  this save user data to database or retrieve user data from database
   return done(null, profile);
 }));
 
@@ -28,7 +27,7 @@ app.get('/auth/google/callback',
     res.redirect('http://localhost:3000/home');
   });
 
-// Define other routes for profile, past records, consultation requests, etc.
+// Define other routes for profile, past records, consultation requests, etc. -- to do
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
